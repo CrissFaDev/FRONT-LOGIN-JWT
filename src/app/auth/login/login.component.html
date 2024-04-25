@@ -1,0 +1,62 @@
+<div class="log">
+  <div class="container">
+    <div class="row ">
+      <div class="login-container">
+        <h2 class="login-form-title">Login</h2>
+        <form [formGroup]="loginform" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              formControlName="username"
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter username"
+            />
+            <div
+              *ngIf="username.invalid && (username.dirty || username.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="username.errors?.['required']">
+                El username es requerido.
+              </div>
+              <div *ngIf="username.errors?.['username']">
+                El username debe tener un formato válido.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              formControlName="password"
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter password"
+            />
+            <div
+              *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="password.errors?.['required']">
+                El Password es requerido.
+              </div>
+            </div>
+          </div>
+          <div class="cont-btn">
+            <button
+              type="submit"
+              class="button btn btn-block btn-login"
+              [disabled]="loginform.invalid"
+            >
+              Login
+            </button>
+          </div>
+          <div class="error text-danger">
+            <p>{{ loginError }}</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

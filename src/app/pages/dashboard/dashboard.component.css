@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.dasboard {
+    height: auto;
+}
+.project-description {
+    width: 800px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.project-description p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .project-description {
+      width: 90%;
+      height: auto;
+      margin: 10px auto;
+      padding: 10px;
+    }
+  
+    .project-description h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+  
+    .project-description p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  }
+  
+
